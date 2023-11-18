@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const port = 3000;
+const port = 8080;
 
 const journalRoutes = require('./routes/journalRoutes');
 app.use(journalRoutes); // Use the journal routes
