@@ -11,16 +11,20 @@ router.post('/analyze-weekly', async (req, res) => {
     const currentDate = new Date();
     const endDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
     const startDate = new Date(endDate.getTime() - (7 * 24 * 60 * 60 * 1000)); // Subtracting 7 days
+    startDate.setHours(0, 0, 0, 0);
+    endDate.setHours(23, 59, 59, 999);
 
     const entries = await Journal.find({ 
       userId: userId,
       date: { $gte: startDate, $lte: endDate }
     });
+    console.log(entries);
 
     const sentiment = new Sentiment();
     let totalScore = 0;
 
     entries.forEach(entry => {
+      console.log(entry.entry);
       const result = sentiment.analyze(entry.entry);
       totalScore += result.score;
     });
