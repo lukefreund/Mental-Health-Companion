@@ -29,4 +29,27 @@ router.get('/user/:id', async (req, res) => {
     }
   });
 
+router.delete('/user/:id', async (req, res) => {
+    try {
+      const userId = req.params.id;
+  
+      // Optional: Check if the user exists
+      const user = await User.findById(userId);
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      // Delete the user
+      await User.findByIdAndDelete(userId);
+  
+      // Delete all journal entries associated with the user
+      await Journal.deleteMany({ userId: user._id });
+  
+      res.json({ message: 'User and their journal entries have been deleted' });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+});
+  
+
 module.exports = router;

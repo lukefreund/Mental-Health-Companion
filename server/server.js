@@ -13,6 +13,9 @@ app.use(journalRoutes); // Use the journal routes
 const userRegistrationRoutes = require('./routes/userRegistrationRoutes');
 app.use(userRegistrationRoutes);
 
+const emotionAnalysisRoutes = require('./routes/emotionAnalysisRoutes');
+app.use(emotionAnalysisRoutes);
+
 app.get('/', (req, res) => {
   res.send('Server is up and running!');
 });
