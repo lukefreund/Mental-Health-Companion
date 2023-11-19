@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import './JournalEntry.css';
 import Mood from '../mood/Mood.js';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const JournalEntry = () => {
   const [entryText, setEntryText] = useState(''); // State to hold the text of the journal entry
   const [mood, setMood] = useState(''); // State to hold the selected mood
+  const [isLoading, setIsLoading] = useState(false); // State for tracking loading status
+  const navigate = useNavigate();
 
   const entryClick = async () => {
     const userId = localStorage.getItem('userId'); // Get the user ID from local storage
@@ -51,6 +54,23 @@ const JournalEntry = () => {
       // Handle the error here
       console.error('Error saving journal entry:', error);
     }
+
+    setIsLoading(true); // Set loading to true when request starts
+
+    try {
+      const response = await axios.post('http://localhost:8080/analyze', {
+        entry: entryText,
+        emotion: mood
+      });
+  
+      navigate('/analysis-result', { state: { analysisResult: response.data } });
+      // Redirect to the analysis page with the response, or handle it as needed
+      console.log('Analysis result:', response.data);
+    } catch (error) {
+      console.error('Error analyzing journal entry:', error);
+    } finally {
+      setIsLoading(false); // Set loading to false when request is complete
+    }
   };
 
   return (
@@ -70,8 +90,11 @@ const JournalEntry = () => {
         </div>
       </div>
       <div className="journal-button">
-        <button onClick={entryClick}>Submit</button>
+        <button onClick={entryClick} disabled={isLoading}>
+          {isLoading ? 'Processing...' : 'Submit'}
+        </button>
       </div>
+      {isLoading && <div className="loader"></div>}
       <div className="mood-selector">
         <Mood onSelectMood={setMood}/>
         <h3 className="message">
