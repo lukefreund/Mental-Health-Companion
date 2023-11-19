@@ -13,7 +13,7 @@ const Navbar = () => {
 
                 <div className='header_center'>
                     <ul className='header_list'>
-                        <li><Link to="/"><h3>Home</h3></Link></li>
+                        <li><Link to="/home"><h3>Home</h3></Link></li>
                         <li><Link to="/calendar"><h3>Calendar</h3></Link></li>
                         <li><Link to="/resources"><h3>Resources</h3></Link></li>
                     </ul>
