@@ -20,7 +20,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='header_right'>
-                    <Link to="/"><h3>My Profile</h3></Link>
+                    <Link to="/profile"><h3>Profile</h3></Link>
                    <img className="ProfilePic" src=""/>
                 </div>
 
