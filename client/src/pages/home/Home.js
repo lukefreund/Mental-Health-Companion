@@ -1,12 +1,13 @@
 import React from 'react';
 import './Home.css';
+import JournalEntry from '../../components/journalEntry/JournalEntry';
 
 const Home = () => {
-    return(
+    return (
         <div>
-            <h1>Welcome to the Home Page!</h1>
+            <JournalEntry />
         </div>
-    
-    )
-}
+    );
+};
+
 export default Home;
