@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="header_left">
-        <h3>Mental Health</h3>
+        <h3>Journaling Buddy</h3>
       </div>
 
       <div className="header_center">

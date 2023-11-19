@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar.js";
 import Login from "./pages/login/Login.js";
 import ProfilePage from "./pages/profile/profile.js"; // Adjust path as necessary
 import Home from "./pages/home/Home.js";
+import AnalysisResultPage from "./components/analysisPage/analysisPage.js";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/analysis-result" element={<AnalysisResultPage />} />
       </Routes>
     </Router>
   );

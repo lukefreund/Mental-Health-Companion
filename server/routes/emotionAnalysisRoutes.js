@@ -22,40 +22,24 @@ async function monologueRequester(prompt) {
     return completion.choices[0];
   }
 
-router.post('/analyze-weekly', async (req, res) => {
-  try {
-    const userId = req.body.userId; // or get from user session if authenticated
+  router.post('/analyze', async (req, res) => {
+    try {
+      const { entry, emotion } = req.body; // Get entry and emotion from the request body
+  
+      // Create a prompt for OpenAI using the provided entry and emotion
+      const prompt = `Analyze this journal entry and emotion for personalized advice. Keep it concise. Entry: "${entry}", Emotion: "${emotion}".`;
 
-    // Calculate the start and end dates for the last week
-    const currentDate = new Date();
-    const endDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-    const startDate = new Date(endDate.getTime() - (7 * 24 * 60 * 60 * 1000)); // Subtracting 7 days
-    startDate.setHours(0, 0, 0, 0);
-    endDate.setHours(23, 59, 59, 999);
-
-    const entries = await Journal.find({ 
-      userId: userId,
-      date: { $gte: startDate, $lte: endDate }
-    });
-    console.log(entries);
-
-    // Concatenate journal entries into a single string
-    const journalText = entries.map(entry => entry.entry).join(' \\n ');
-
-    // Create a prompt for OpenAI
-    const prompt = `Analyze the following journal entries for their overall emotional sentiment and provide advice: \\n ${journalText}`;
-
-    monologueRequester(prompt).then((gptResp) => {
-        res.send(gptResp.message.content);
+  
+      monologueRequester(prompt).then((gptResp) => {
+        res.send(gptResp.message.content); // Send back the OpenAI response
       }).catch((err) => {
         console.error("Error in OpenAI request:", err);
         res.status(500).json({ message: "Error in processing OpenAI request" });
       });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+  
 
 module.exports = router;
