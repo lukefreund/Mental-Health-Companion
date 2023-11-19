@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeComponent.css";
-import Home from "../../pages/home/Home";
+import logoImage from "../../image/Icon.png";
 
 const HomeComponent = () => {
   return (
@@ -10,6 +10,7 @@ const HomeComponent = () => {
         <span style={{ color: "#ffb6c1" }}>Buddy</span>
         <span style={{ color: " #96ace3" }}>!</span>
       </h1>
+      <img src={logoImage} />
       <h2>
         Welcome to Journaling Buddy, where we empower you to prioritize your
         mental well-being. Start your journey towards a healthier mind by
