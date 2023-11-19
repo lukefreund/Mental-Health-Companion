@@ -1,0 +1,82 @@
+.mood {
+  --c: transparent;
+  --h: 154;
+  --s: 80%;
+  --l: 60%;
+  --size: 130%;
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  -webkit-tap-highlight-color: transparent;
+}
+.mood__heading {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1rem, -0.875rem + 8.3333vw, 3.5rem);
+  font-weight: 700;
+  margin-block-end: 0.25em;
+}
+.mood__icon_1,
+.mood__icon_2,
+.mood__icon_3,
+.mood__icon_4,
+.mood__icon_5 {
+  --f: hsl(var(--h), var(--s), var(--l));
+  aspect-ratio: 1;
+  block-size: var(--size);
+  color: var(--c);
+  fill: var(--f);
+  inline-size: var(--size);
+  stroke: var(--f);
+}
+
+.mood__icon_1 {
+  --h: 90;
+}
+.mood__icon_2 {
+  --h: 150;
+}
+.mood__icon_3 {
+  --h: 60;
+}
+.mood__icon_4 {
+  --h: 20;
+}
+.mood__icon_5 {
+  --h: 0;
+}
+
+.mood input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.mood input:checked + .mood__icon_1,
+.mood input:checked + .mood__icon_2,
+.mood input:checked + .mood__icon_3,
+.mood input:checked + .mood__icon_4,
+.mood input:checked + .mood__icon_5 {
+  animation: updown 1.5s ease-in-out both;
+  transform-origin: center center;
+  --c: hsl(var(--h), var(--s), var(--l));
+  --f: hsl(var(--h), 40%, 40%);
+}
+@keyframes updown {
+  25% {
+    transform: scale(1.2);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.message {
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 100px;
+}
