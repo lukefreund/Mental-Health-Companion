@@ -20,20 +20,24 @@ router.post('/journal', async (req, res) => {
     }
 });
   
+// GET
 router.get('/journal/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
     const { date } = req.query; // Expecting a date in 'YYYY-MM-DD' format
 
+    console.log('getting journal...');
     // Parse the date and create a date range for the whole day
-    const startDate = new Date(date);
-    startDate.setHours(0, 0, 0, 0); // Start of the day
-    const endDate = new Date(startDate);
-    endDate.setDate(endDate.getDate() + 1); // End of the day
+    const dayStart = new Date(`${date}T00:00:00Z`); // Start of the day in UTC
+    const dayEnd = new Date(`${date}T23:59:59Z`); // End of the day in UTC
+
+    console.log(dayStart);
+    console.log(dayEnd);
+
 
     const entries = await Journal.find({
       userId: userId,
-      date: { $gte: startDate, $lt: endDate }
+      date: { $gte: dayStart, $lte: dayEnd }
     });
 
     res.json(entries);

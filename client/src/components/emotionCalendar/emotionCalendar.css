@@ -38,7 +38,7 @@
   
   /* Active day (selected) */
   .react-calendar__tile--active {
-    background: #6A5ACD; /* A color that matches the header */
+    background: #96ace3; /* A color that matches the header */
     color: white;
   }
   
@@ -53,15 +53,30 @@
     max-width: 600px; /* Maximum width for larger screens */
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-
+    margin-left: 20px;
   }
   
   .journalDetails {
-    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; /* Match header's background color */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
   }
+
+  .journalEntryTitle,
+.emotionTitle {
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.journalEntryText,
+.emotionText {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f7f7f7; /* Light gray background for the text area */
+  border-radius: 4px;
+}
   
   /* Headings to match your header style */
   .journalDetails h3 {
@@ -82,4 +97,18 @@
     text-align: center;
     margin-bottom: 20px;
     color: #333; /* Adjust to match your header */
+  }
+
+  .editButton {
+    padding: 8px 16px;
+    background-color: #96ace3; /* A nice green color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Add some space above the button */
+  }
+  
+  .editButton:hover {
+    background-color: #5f81d8;
   }
