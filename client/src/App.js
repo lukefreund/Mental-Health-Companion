@@ -1,31 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Calendar from './pages/calendar/Calendar.js';
-import Resources from './pages/resources/Resources.js';
-import Home from './pages/home/Home.js';
-import Navbar from './components/navbar/Navbar.js';
-import Login from './pages/login/Login.js';
-import ProfilePage from './pages/profile/profile.js'; // Adjust path as necessary
-
-
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Calendar from "./pages/calendar/Calendar.js";
+import Resources from "./pages/resources/Resources.js";
+import Journal from "./pages/journal/Journal.js";
+import Navbar from "./components/navbar/Navbar.js";
+import Login from "./pages/login/Login.js";
+import ProfilePage from "./pages/profile/profile.js"; // Adjust path as necessary
+import Home from "./pages/home/Home.js";
 
 const App = () => {
-    return (
-          <Router>
+  return (
+    <Router>
+      <Navbar />
 
-            <Navbar />
-            
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/resources" element={<Resources />} />
-                <Route path="/profile" element={<ProfilePage />} />
-            </Routes>
-            
-          </Router>
-    );
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
