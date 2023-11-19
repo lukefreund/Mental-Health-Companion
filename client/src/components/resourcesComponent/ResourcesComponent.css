@@ -1,0 +1,68 @@
+.resource {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.resource h1 {
+    text-align: center;
+}
+
+.resource-Article{
+    box-shadow:0 3px 10px rgba(0, 0, 1, 0.2); 
+    text-align:center;
+    width:60%;
+    padding:30px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+.resource-Article-Link{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.resource-Meditation{
+    box-shadow:0 3px 10px rgba(0, 0, 1, 0.2); 
+    text-align:center;
+    width:60%;
+    padding:30px;
+    margin:auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.resource-Meditation-Link{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.resource-Journaling{
+    box-shadow:0 3px 10px rgba(0, 0, 1, 0.2); 
+    text-align:center;
+    width:60%;
+    padding:30px;
+    margin:auto;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.resource-Journaling-Link{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+

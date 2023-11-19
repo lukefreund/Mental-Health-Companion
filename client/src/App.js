@@ -8,12 +8,14 @@ import AuthPage from './pages/authPage/authPage.js';
 import ProfilePage from './pages/profile/profile.js'; // Adjust path as necessary
 
 
+
+
 const App = () => {
     return (
           <Router>
 
             <Navbar />
-
+            
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/calendar" element={<Calendar />} />
