@@ -1,12 +1,14 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/HealthCompanionDB', { useNewUrlParser: true, useUnifiedTopology: true });
-
+const mongoose = require("mongoose");
+const connectDB = require("./config/dbConn.js");
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
-app.use(express.json());
 const port = 8080;
 
-const cors = require('cors');
+connectDB();
+
+app.use(express.json());
 app.use(cors());
 
 const journalRoutes = require('./routes/journalRoutes');
@@ -22,6 +24,7 @@ app.get('/', (req, res) => {
   res.send('Server is up and running!');
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+mongoose.connection.once("open", () => {
+  console.log("Connected to MongoDB");
+  app.listen(port, () => console.log(`Server running on port ${port}`));
 });
