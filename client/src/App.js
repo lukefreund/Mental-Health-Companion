@@ -6,12 +6,14 @@ import Home from './pages/home/Home.js';
 import Navbar from './components/navbar/Navbar.js';
 
 
+
+
 const App = () => {
     return (
           <Router>
 
             <Navbar />
-
+            
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/calendar" element={<Calendar />} />

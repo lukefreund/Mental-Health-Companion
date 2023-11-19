@@ -1,12 +1,13 @@
 import React from 'react';
 import './Resources.css';
+import ResourcesComponent from '../../components/resourcesComponent/ResourcesComponent';
+
 
 const Resources = () => {
     return(
         <div>
-            <h1>Welcome to the Resources Page!</h1>
+            <ResourcesComponent/>
         </div>
-    
     )
 }
 export default Resources;
