@@ -1,7 +1,7 @@
 // AuthPage.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './authPage.css';
+import './AuthPage.css';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -32,7 +32,7 @@ const AuthPage = () => {
         setIsLogin(true);
       }
       else {
-        navigate('/'); // Redirect to the home page
+        navigate('/home'); // Redirect to the home page
       }
     } catch (error) {
       console.error('Authentication failed:', error);
