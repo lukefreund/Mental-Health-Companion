@@ -1,45 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Mood.css";
 
-const Mood = ({ onSelectMood }) => { // Receive onSelectMood as a prop
+const Mood = ({ onSelectMood }) => {
+  // Receive onSelectMood as a prop
+  const [selectedMood, setSelectedMood] = useState(null);
+
   const handleMoodChange = (event) => {
-    onSelectMood(event.target.value); // Call onSelectMood when a mood is selected
+    const selectedMoodValue = event.target.value;
+    setSelectedMood(selectedMoodValue);
+    onSelectMood(selectedMoodValue);
   };
 
+  const getMoodMessage = () => {
+    switch (selectedMood) {
+      case "Ecstatic":
+        return "Ecstatic!";
+      case "Happy":
+        return "Happy!";
+      case "Neutral":
+        return "Neutral";
+      case "Sad":
+        return "Sad";
+      case "Angry":
+        return "Angry";
+      default:
+        return "";
+    }
+  };
   return (
     <div>
       <fieldset class="mood">
         <label class="mood__label" style={{ height: "30px" }}>
-          <input name="mood" type="radio" value="Ecstatic" onChange={handleMoodChange}/>
+          <input
+            name="mood"
+            type="radio"
+            value="Ecstatic"
+            onChange={handleMoodChange}
+          />
           <svg class="mood__icon_1">
             <use xlinkHref="#mood1"></use>
           </svg>
         </label>
         <label class="mood__label" style={{ height: "30px" }}>
-          <input name="mood" type="radio" value="Happy" onChange={handleMoodChange}/>
+          <input
+            name="mood"
+            type="radio"
+            value="Happy"
+            onChange={handleMoodChange}
+          />
           <svg class="mood__icon_2">
             <use xlinkHref="#mood2"></use>
           </svg>
         </label>
         <label class="mood__label" style={{ height: "30px" }}>
-          <input name="mood" type="radio" value="Neutral" onChange={handleMoodChange}/>
+          <input
+            name="mood"
+            type="radio"
+            value="Neutral"
+            onChange={handleMoodChange}
+          />
           <svg class="mood__icon_3">
             <use xlinkHref="#mood3"></use>
           </svg>
         </label>
         <label class="mood__label" style={{ height: "30px" }}>
-          <input name="mood" type="radio" value="Sad" onChange={handleMoodChange}/>
+          <input
+            name="mood"
+            type="radio"
+            value="Sad"
+            onChange={handleMoodChange}
+          />
           <svg class="mood__icon_4">
             <use xlinkHref="#mood4"></use>
           </svg>
         </label>
         <label class="mood__label" style={{ height: "30px" }}>
-          <input name="mood" type="radio" value="Angry" onChange={handleMoodChange}/>
+          <input
+            name="mood"
+            type="radio"
+            value="Angry"
+            onChange={handleMoodChange}
+          />
           <svg class="mood__icon_5">
             <use xlinkHref="#mood5"></use>
           </svg>
         </label>
       </fieldset>
+      {selectedMood && (
+        <div className="mood-message">
+          <p>{getMoodMessage()}</p>
+        </div>
+      )}
 
       <svg>
         <symbol id="common" viewBox="0 0 160 160">

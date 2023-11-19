@@ -6,7 +6,7 @@ const HomeComponent = () => {
   return (
     <div className="title">
       <h1>
-        Welcome to <span style={{ color: " #96ace3" }}>Journaling</span>{" "}
+        Welcome to <span style={{ color: " #96ace3" }}>Journaling </span>{" "}
         <span style={{ color: "#ffb6c1" }}>Buddy</span>
         <span style={{ color: " #96ace3" }}>!</span>
       </h1>

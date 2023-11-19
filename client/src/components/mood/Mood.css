@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   -webkit-tap-highlight-color: transparent;
+  margin-top: 40px;
 }
 .mood__heading {
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -39,7 +40,7 @@
   --h: 60;
 }
 .mood__icon_4 {
-  --h: 20;
+  --h: 200;
 }
 .mood__icon_5 {
   --h: 0;
@@ -78,5 +79,14 @@
 .message {
   border: 1px solid black;
   text-align: center;
-  margin-top: 100px;
+  margin-top: -50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.mood-message {
+  text-align: center;
+  margin-top: 70px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
 }

@@ -43,44 +43,52 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="auth-page">
-      <h2 className="auth-page__title">{isLogin ? "Login" : "Sign Up"}</h2>
-      <form onSubmit={handleSubmit} className="auth-page__form">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-          className="auth-page__input"
-        />
-        {!isLogin && (
+    <div className="container">
+      <div className="web-title">
+        <h1>
+          <span style={{ color: " #96ace3" }}>Journaling </span>{" "}
+          <span style={{ color: "#ffb6c1" }}>Buddy</span>
+        </h1>
+      </div>
+      <div className="auth-page">
+        <h2 className="auth-page__title">{isLogin ? "Login" : "Sign Up"}</h2>
+        <form onSubmit={handleSubmit} className="auth-page__form">
           <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
             className="auth-page__input"
           />
-        )}
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-          className="auth-page__input"
-        />
-        <button type="submit" className="auth-page__button">
-          {isLogin ? "Login" : "Sign Up"}
+          {!isLogin && (
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+              className="auth-page__input"
+            />
+          )}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+            className="auth-page__input"
+          />
+          <button type="submit" className="auth-page__button">
+            {isLogin ? "Login" : "Sign Up"}
+          </button>
+        </form>
+        <button
+          onClick={() => setIsLogin(!isLogin)}
+          className="auth-page__toggle"
+        >
+          {isLogin ? "Need to create an account?" : "Already have an account?"}
         </button>
-      </form>
-      <button
-        onClick={() => setIsLogin(!isLogin)}
-        className="auth-page__toggle"
-      >
-        {isLogin ? "Need to create an account?" : "Already have an account?"}
-      </button>
+      </div>
     </div>
   );
 };
