@@ -27,8 +27,8 @@
 }
 
 .header_left,
-.header_right > a,
-.header_list > li > a {
+.header_right a,
+.header_list li a {
   font-size: 20px;
   font-family: "Marker Felt", fantasy;
   text-decoration: none;
@@ -41,7 +41,13 @@
   align-items: center;
 }
 
-.header_list > li {
+.header_list li {
   list-style-type: none;
   padding: 50px;
+}
+
+.header_list li:hover,
+.header_right:hover {
+  text-decoration: underline;
+  color: white;
 }

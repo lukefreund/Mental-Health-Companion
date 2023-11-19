@@ -17,7 +17,7 @@ const Profile = () => {
           <strong>Username:</strong> {username}
         </p>
         <p>
-          <strong>Password:</strong> {password}
+          <strong>Password: ********</strong>
         </p>
       </div>
     </div>
