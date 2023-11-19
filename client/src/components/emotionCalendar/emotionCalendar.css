@@ -1,0 +1,85 @@
+.emotionCalendar {
+    display: flex;
+    justify-content: space-between; /* Aligns items side by side */
+    align-items: flex-start; /* Aligns items to the top */
+    height: 80vh; /* Use viewport height to take up most of the screen */
+    padding: 75px;
+  }
+  
+  .react-calendar {
+    width: 90%; /* Adjust the width as needed */
+    max-width: 800px; /* Maximum width for larger screens */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif; /* Match font to your header */
+  }
+
+  /* Styles for the current day */
+.react-calendar__tile--now {
+    background: lightgray; /* Light gray for the current date */
+  }
+  
+  /* Style for the calendar tiles */
+  .react-calendar__tile {
+    max-width: 100%; /* Ensure tiles are fully visible */
+    height: 80px; /* Fixed height for tiles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #96ace3;
+  }
+  
+  /* Style for the calendar navigation buttons */
+  .react-calendar__navigation button {
+    min-height: 44px; /* Increase hit area for better UX */
+    color: #333; /* Match your header's text color */
+    background-color: transparent; /* No background for a cleaner look */
+  }
+  
+  /* Active day (selected) */
+  .react-calendar__tile--active {
+    background: #6A5ACD; /* A color that matches the header */
+    color: white;
+  }
+  
+  /* Hover effect for tiles */
+  .react-calendar__tile:hover {
+    background-color: #f0f0f0; /* Light color on hover */
+  }
+
+  /* Styles for the journal details container */
+.journalDetailsContainer {
+    width: 50%; /* Adjust the width as needed */
+    max-width: 600px; /* Maximum width for larger screens */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+
+  }
+  
+  .journalDetails {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Match header's background color */
+  }
+  
+  /* Headings to match your header style */
+  .journalDetails h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333; /* Match your header's text color */
+  }
+  
+  /* Paragraph styling within journal details */
+  .journalDetails p {
+    color: #666; /* Slightly muted text color */
+  }
+  
+  /* Title above the calendar */
+.calendarTitle {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Adjust to match your header */
+  }

@@ -1,11 +1,14 @@
 import React from 'react';
 import './Calendar.css';
+import EmotionCalendar from '../../components/emotionCalendar/emotionCalendar.js';
 
 const Calendar = () => {
     return(
-        <div>
-            <h1>Welcome to the Calendar Page!</h1>
-        </div>
+        <div className="calendarPage">
+      {/* You can add a header or other components here */}
+      <EmotionCalendar />
+      {/* Any additional components can go here */}
+    </div>
     
     )
 }

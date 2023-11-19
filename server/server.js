@@ -4,8 +4,10 @@ mongoose.connect('mongodb://localhost:27017/HealthCompanionDB', { useNewUrlParse
 const express = require('express');
 const app = express();
 app.use(express.json());
-
 const port = 8080;
+
+const cors = require('cors');
+app.use(cors());
 
 const journalRoutes = require('./routes/journalRoutes');
 app.use(journalRoutes); // Use the journal routes

@@ -20,16 +20,28 @@ router.post('/journal', async (req, res) => {
     }
 });
   
-// GET
 router.get('/journal/:userId', async (req, res) => {
-    try {
-      const entries = await Journal.find({ userId: req.params.userId });
-      res.json(entries);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
+  try {
+    const { userId } = req.params;
+    const { date } = req.query; // Expecting a date in 'YYYY-MM-DD' format
+
+    // Parse the date and create a date range for the whole day
+    const startDate = new Date(date);
+    startDate.setHours(0, 0, 0, 0); // Start of the day
+    const endDate = new Date(startDate);
+    endDate.setDate(endDate.getDate() + 1); // End of the day
+
+    const entries = await Journal.find({
+      userId: userId,
+      date: { $gte: startDate, $lt: endDate }
+    });
+
+    res.json(entries);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
-  
+
 // PUT
 router.put('/journal/:id', async (req, res) => {
     try {

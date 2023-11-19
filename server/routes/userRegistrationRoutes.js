@@ -6,11 +6,50 @@ const Journal = require('../models/journalModel');
 
 router.post('/register', async (req, res) => {
   try {
-    const newUser = new User(req.body);
-    await newUser.save();
-    res.status(201).json(newUser);
+    const { email, username, password } = req.body;
+
+    // Check if the user already exists
+    const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+    if (existingUser) {
+      return res.status(409).json({ message: 'User already exists with the given email or username' });
+    }
+
+    // If user does not exist, create a new user
+    const newUser = new User({ email, username, password });
+    const savedUser = await newUser.save();
+    res.status(201).json({
+      userId: savedUser._id,
+      email: savedUser.email,
+      username: savedUser.username,
+      password: savedUser.password
+    });
   } catch (error) {
     res.status(400).json({ message: error.message });
+  }
+});
+
+
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email });
+
+    if (!user) {
+      return res.status(401).json({ message: 'Login failed, user not found' });
+    }
+
+    if (user.password === password) {
+      res.json({
+        userId: user._id,
+        email: user.email,
+        username: user.username,
+        password: user.password // Note: Sending password is generally not recommended
+      });
+    } else {
+      res.status(401).json({ message: 'Login failed, incorrect password' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 

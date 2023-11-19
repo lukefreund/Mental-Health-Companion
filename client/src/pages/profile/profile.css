@@ -1,0 +1,21 @@
+/* profilePage.css */
+.profile {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 75px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .profile-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .profile-info p {
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+  
