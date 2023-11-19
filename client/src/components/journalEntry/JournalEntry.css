@@ -1,69 +1,75 @@
-.journal-container{
-    margin: auto;
-    margin-top: 45px;
-    width: 50%;
-    padding:5px;
-    box-shadow:0 3px 10px rgba(0, 0, 0, 0.2); 
-
-}
-
-
 .journal-entry {
-    display: block;
-    text-align: center;
-    margin: 50px auto;
-    max-width: 1000px;
-    color:#3969e3;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.journal-title{
-    text-align: left;
-    width: 60%;
-    margin-left: 150px;
-    margin-bottom: -20px;
-}
-
-
-.journal-textarea {
-    margin:30px auto;
-    border: none;
-    resize: none;
-    outline: none;
-    background-color: #96ace3;
-    border-radius: 10px;
-    margin-bottom: 15px; 
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); 
-    width:60%;
-    min-height: 300px;
-    font-family: 'Marker Felt', fantasy;
-    font-size: 20px;
-    color: black;
-    padding-left: 15px;
-    padding-top: 19px;
-    line-height: 30px;
-
+.journal-box {
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  width: 60%;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 30px;
 }
 
-.journal-textarea::placeholder {
-    color: black;
-    font-family: 'Marker Felt', fantasy;
-    font-size: 20px;
-    text-align: left;
-    
+.journal-title {
+  padding-top: 5px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.journal-textarea textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  min-width: 700px;
+  min-height: 300px;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.journal-button button {
+  width: 50%;
+  margin-top: 70px;
+  padding: 20px;
+  margin-left: 360px;
+  margin-right: 300px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border-radius: 10px;
+  background-color: #96ace3;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+.journal-button button:hover {
+  background-color: #5f81d8;
+}
+
+.mood-selector {
+  width: 60%;
+  margin-top: 150px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.journal-box,
+.mood-selector {
+  flex: 1 1 0;
 }
 
 .journal-button {
-    margin-right: 45%;
-    padding: 10px;
-    width: 15%;
-    border-radius: 5px;
-    font-size: 20px;
-    font-family: 'Marker Felt', fantasy;
-    text-align:center;
-    color: white;
-    border: none;
-    background-color: violet;
-    cursor: pointer;
-
+  flex: 100%;
+  order: 3;
 }
-
+.message {
+  position: absolute;
+  top: 250px; /* Adjust as needed */
+  left: 900px;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-style: none !important;
+}
