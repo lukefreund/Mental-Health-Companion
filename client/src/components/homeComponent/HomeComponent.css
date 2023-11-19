@@ -1,0 +1,13 @@
+.title h1 {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.title h2 {
+  text-align: center;
+  width: 60%;
+  color: #96ace3;
+  margin-left: 300px;
+  margin-top: 350px;
+  line-height: 35px;
+}

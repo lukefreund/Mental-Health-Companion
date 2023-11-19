@@ -1,13 +1,11 @@
-import React from 'react';
-import './Home.css';
-import JournalEntry from '../../components/journalEntry/JournalEntry';
+import React from "react";
+import HomeComponent from "../../components/homeComponent/HomeComponent";
 
 const Home = () => {
-    return (
-        <div>
-            <JournalEntry />
-        </div>
-    );
+  return (
+    <div>
+      <HomeComponent />
+    </div>
+  );
 };
-
 export default Home;
