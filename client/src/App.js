@@ -6,7 +6,7 @@ import Journal from "./pages/journal/Journal.js";
 import Login from "./pages/login/Login.js";
 import ProfilePage from "./pages/profilePage/ProfilePage.js"; // Adjust path as necessary
 import Home from "./pages/home/Home.js";
-import AnalysisResultPage from "./components/analysisPage/analysisPage.js";
+import AnalysisResultPage from "./components/analysisPage/analysisPage";
 
 const App = () => {
   return (
