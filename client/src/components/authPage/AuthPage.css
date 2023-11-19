@@ -1,58 +1,65 @@
 /* AuthPage.css with BEM naming conventions */
 
 .auth-page {
-    max-width: 800px;
-    margin: auto;
-    margin-top: 100px;
-    padding: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .auth-page__title {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .auth-page__form {
-    margin-bottom: 20px;
-  }
-  
-  .auth-page__input {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .auth-page__button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    background-color: #96ace3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .auth-page__button:hover {
-    background-color: #0056b3;
-  }
-  
-  .auth-page__toggle {
-    width: 100%;
-    padding: 8px;
-    background-color: transparent;
-    color: #007bff;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .auth-page__toggle:hover {
-    color: #0056b3;
-  }
-  
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.auth-page__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-page__form {
+  margin-bottom: 20px;
+}
+
+.auth-page__input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-page__button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #96ace3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-page__button:hover {
+  background-color: #0056b3;
+}
+
+.auth-page__toggle {
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.auth-page__toggle:hover {
+  color: #0056b3;
+}
+
+.web-title {
+  margin-top: 50px;
+  margin-bottom: -50px;
+  text-align: center;
+  color: #96ace3;
+  top: 100%;
+}
