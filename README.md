@@ -2,6 +2,8 @@
 
 Journaling Buddy is an empathetic, AI-powered journaling web application designed to help users reflect on their daily thoughts and emotions. With a focus on mental health, Journaling Buddy encourages users to make journaling a regular part of their mental wellness routine.
 
+Try here: https://journal-prod-frontend-fba03c3a4b88.herokuapp.com/
+
 ## Features
 
 - **User Authentication:** Login and registration process to keep your journal private.
